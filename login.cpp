@@ -2,10 +2,26 @@
 #include<stdlib.h>
 #include<string.h>
 #include<conio.h>
+#include<windows.h>
+void color(short x)	
+{
+	if (x >= 0 && x <= 15)//参数在0-15的范围颜色
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), x);	//只有一个参数，改变字体颜色 
+	else//默认的颜色白色
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+}
+
+void goto_xy(int x, int y)
+{
+	HANDLE hOut;
+	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos = { x,y };
+	SetConsoleCursorPosition(hOut, pos);
+}
 int main(){
 	char usename[20],password[20],original_usename[20],original_password[20],ch;
 	FILE *fp;
-	if((fp=fopen("1.txt","r"))==NULL){
+	if((fp=fopen("user.txt","r"))==NULL){
 		printf("打开文件失败!\n");
 		exit(1);
 	}

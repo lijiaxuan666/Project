@@ -19,6 +19,7 @@ void goto_xy(int x, int y)
 	SetConsoleCursorPosition(hOut, pos);
 }
 int main(){
+	printf("µÇÂ¼ÏµÍ³") ;
 	char usename[20],password[20],original_usename[20],original_password[20],ch;
 	FILE *fp;
 	if((fp=fopen("user.txt","r"))==NULL){

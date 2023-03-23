@@ -244,7 +244,10 @@
                         url: 'clazz/deleteClazzs.do',
                         data: {json:JSON.stringify(data)},   //发json过去
                         success:function (res) {
-                            layer.msg("删除"+res+"行成功！",{time:800});
+                            if(res == -1)
+                                layer.msg("删除失败！该班级存在学生！",{time:800});
+                            else
+                                layer.msg("删除"+res+"行成功！",{time:800});
                             //重载表格
                             table.reload('currentTableId',{page:{curr:1}});
                         }
@@ -287,17 +290,7 @@
                         });
                     },
                     yes: function () {  //确认回调
-                        layer.close(index); //关闭弹出框
-                        var mdata = form.val('editForm');   //获取表单的数据
-                        $.getJSON({
-                            url: 'clazz/updateClazz.do',
-                            data: {json:JSON.stringify(mdata)},   //发json过去
-                            success:function (res) {
-                                layer.msg("修改"+res+"行成功!",{time:800});
-                                //重载表格
-                                table.reload('currentTableId');
-                            }
-                        });
+
                     }
                 });
                 $(window).on("resize", function () {
@@ -351,7 +344,12 @@
                         url: 'clazz/deleteClazzs.do',
                         data: {json:JSON.stringify(mdata)},   //发json过去
                         success:function (res) {
-                            layer.msg("删除"+res+"行成功！",{time:800});
+                            if(res == -1)
+                                layer.msg("删除失败！该班级存在学生！",{time:800});
+                            else
+                                layer.msg("删除"+res+"行成功！",{time:800});
+                            //重载表格
+                            table.reload('currentTableId',{page:{curr:1}});
                         }
                     });
                 });

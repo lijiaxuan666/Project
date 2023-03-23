@@ -4,10 +4,14 @@ import com.wangpeng.dao.ClazzDao;
 import com.wangpeng.dao.MajorDao;
 import com.wangpeng.pojo.Clazz;
 import com.wangpeng.pojo.Major;
+import com.wangpeng.pojo.Student;
 import com.wangpeng.service.ClazzService;
+import com.wangpeng.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +23,9 @@ public class ClazzServiceImpl implements ClazzService {
 
     @Autowired
     MajorDao majorDao;
+
+    @Autowired
+    StudentService service;
 
     /**
      * 为班级列表添加专业名
@@ -53,7 +60,23 @@ public class ClazzServiceImpl implements ClazzService {
 
     @Override
     public int deleteClazzs(List<Clazz> clazzs) {
-        return clazzDao.deleteClazzs(clazzs);
+        List<Clazz> clazz =new ArrayList<>();
+        boolean flag=false;
+        for(Clazz clazz1 : clazzs){
+            Map<String, Object> searchParam = new HashMap<>();
+            searchParam.put("cid", clazz1.getCid());
+            List<Student> students = service.searchStudents(1, 10, searchParam);
+            if( students.size() == 0){
+                clazz.add(clazz1);
+            }else{
+                flag=true;
+            }
+        }
+        if(!flag){
+            return clazzDao.deleteClazzs(clazzs);
+        }else{
+            return -1;
+        }
     }
 
     @Override

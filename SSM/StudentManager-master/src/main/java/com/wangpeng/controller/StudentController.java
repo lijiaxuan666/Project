@@ -132,6 +132,11 @@ public class StudentController {
         return service.addStudent(student);
     }
 
+    @RequestMapping("addStudent2.do")
+    public Integer addStudent2(Student student){
+        return service.addStudent(student);
+    }
+
     /**
      * 修改一个学生
      * @param json 学生对象的json

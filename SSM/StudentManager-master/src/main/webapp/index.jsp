@@ -95,6 +95,7 @@
 
 <div class="site-text" style="margin: 5%; display: none" id="edit_window">
     <div class="layui-form" style="width: 400px; float: left" lay-filter="editForm">
+
         <!--隐藏域，sid-->
         <input type="hidden" id="sid" name="sid" class="layui-input" value="null">
         <!--隐藏域，pic（头像地址）-->
@@ -314,6 +315,7 @@
         });
 
         //加载数据表格
+        //加载数据表格
         table.render({
             elem: '#currentTableId',
             toolbar: '#toolbarDemo',
@@ -344,9 +346,8 @@
                             url: 'student/addStudent.do',
                             data: {json:JSON.stringify(mdata)},
                             type: 'post',
-                            datatype: 'json',
                             success: function (res) {
-                                layer.message("注册成功！！！");
+                                console.log("注册成功！！！");
                             }
                         });
 
@@ -355,6 +356,7 @@
             }
         });
     });
+
 
     //点击验证码
     $("#code_pic").click(function () {

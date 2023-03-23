@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
         // System.out.println("basePath=" + basePath);
 
         // 如果是登录相关的界面和接口，直接放行
-        if (basePath.equals("/index.jsp") || basePath.equals("/login/login.do")) {
+        if (basePath.equals("/index.jsp") || basePath.equals("/login/login.do") || basePath.equals("student/addStudent.do")|| basePath.equals("upload/uploadImg.do")) {
             // 访问目标资源
             filterChain.doFilter(servletRequest,servletResponse);
             return;

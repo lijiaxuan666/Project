@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定对应的Dao/Mapper接口-->
+<mapper namespace="com.wangpeng.dao.StudentDao">
+
+    <insert id="insertStudent" parameterType="Student">
+        insert into outside(sid,sname,snum,ssex,sage,cid,sstatus,sremark,address,entime)
+        values(#{sid},#{sname},#{snum},#{ssex},#{sage},#{cid},#{sstatus},#{sremark},#{address},#{entime})
+    </insert>
+
+    <delete id="deleteStudents" parameterType="Student">
+        delete from outside where sid in
+        <foreach collection="list" open="(" close=")" item="obj" separator=",">
+            #{obj.sid}
+        </foreach>
+    </delete>
+
+    <update id="updateStudent" parameterType="Student">
+        update outside set sname=#{sname},snum=#{snum},ssex=#{ssex},sage=#{sage},cid=#{cid},sstatus=#{sstatus},sremark=#{sremark},address=#{address},entime=#{entime}
+        where sid=#{sid}
+    </update>
+
+    <select id="selectStudent" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sstatus,sremark,address,entime
+        from outside
+        where sid=#{sid}
+    </select>
+
+    <select id="selectStudentsByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sstatus,sremark,address,entime from outside limit #{begin},#{size}
+    </select>
+
+    <select id="getStudentsCount" resultType="int">
+        select count(*) from outside
+    </select>
+
+    <select id="searchStudentsByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sstatus,sremark,address,entime from outside
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+
+    <select id="getSearchCount" resultType="int">
+        select count(*) from outside
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="checkByUsernameAndPassword" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sstatus,sremark,address,entime from outside
+        where sname=#{username} and pswd=#{password}
+        limit 1
+    </select>
+
+    <select id="selectStudents" resultType="student">
+        select sid,sname,snum,ssex,sage,sstatus,sremark,address,entime from outside
+    </select>
+
+    <insert id="insertLocalPeople" parameterType="Student">
+        insert into local(sid,sname,snum,ssex,sage,address)
+        values(#{sid},#{sname},#{snum},#{ssex},#{sage},#{address})
+    </insert>
+
+    <delete id="deleteLocalPeople" parameterType="Student">
+        delete from local where sid in
+        <foreach collection="list" open="(" close=")" item="obj" separator=",">
+            #{obj.sid}
+        </foreach>
+    </delete>
+
+    <update id="updateLocalPeople" parameterType="Student">
+        update local set sname=#{sname},snum=#{snum},ssex=#{ssex},sage=#{sage},address=#{address}
+        where sid=#{sid}
+    </update>
+
+    <select id="selectLocalPeoples" resultType="Student">
+        select sid,sname,snum,ssex,sage,address
+        from local
+        where sid=#{sid}
+    </select>
+
+    <select id="selectLocalPeoplesByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,address from local limit #{begin},#{size}
+    </select>
+
+    <select id="getLocalPeoplesCount" resultType="int">
+        select count(*) from local
+    </select>
+
+    <select id="searchLocalPeoplesByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,address from local
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+
+    <select id="getLocalPeoplesSearchCount" resultType="int">
+        select count(*) from local
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertOutPeople" parameterType="Student">
+        insert into goout(sid,sname,snum,ssex,sage,cid,sremark,address,entime)
+        values(#{sid},#{sname},#{snum},#{ssex},#{sage},#{cid},#{sremark},#{address},#{entime})
+    </insert>
+
+    <delete id="deleteOutPeople" parameterType="Student">
+        delete from goout where sid in
+        <foreach collection="list" open="(" close=")" item="obj" separator=",">
+            #{obj.sid}
+        </foreach>
+    </delete>
+
+    <update id="updateOutPeople" parameterType="Student">
+        update goout set sname=#{sname},snum=#{snum},ssex=#{ssex},sage=#{sage},cid=#{cid},sremark=#{sremark},address=#{address},entime=#{entime}
+        where sid=#{sid}
+    </update>
+
+    <select id="selectOutPeoples" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sremark,address,entime
+        from goout
+        where sid=#{sid}
+    </select>
+
+    <select id="selectOutPeoplesByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sremark,address,entime from goout limit #{begin},#{size}
+    </select>
+
+    <select id="getOutPeoplesCount" resultType="int">
+        select count(*) from goout
+    </select>
+
+    <select id="searchOutPeoplesByLimit" resultType="Student">
+        select sid,sname,snum,ssex,sage,cid,sremark,address,entime from goout
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+
+    <select id="getOutPeoplesSearchCount" resultType="int">
+        select count(*) from goout
+        <where>
+            <if test="sname != null and sname != '' ">
+                and sname like concat('%',#{sname},'%')
+            </if>
+            <if test="snum != null and snum != '' ">
+                and snum like concat('%',#{snum},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectLocalPeople" resultType="student">
+        select sid,sname,snum,ssex,sage,address from local
+    </select>
+
+    <select id="selectOutPeople" resultType="student">
+        select sid,sname,snum,ssex,sage,sstatus,sremark,address,entime from goout
+    </select>
+
+</mapper>

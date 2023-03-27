@@ -113,7 +113,7 @@ a:hover, a:active {
 	overflow: hidden;
 	margin-right:40px;
 	margin-bottom: 500px;
-	
+
 }
 
 .shadow .corner {
@@ -128,7 +128,7 @@ a:hover, a:active {
 .shadow .lb {
 	left: 0;
 	bottom: 0;
-	
+
 }
 
 .shadow .rt {
@@ -138,7 +138,7 @@ a:hover, a:active {
 
 .shadow .box {
 	background: #fff;
-	
+
 	border: 1px solid #bfbfbf;
 	padding: 5px;
 	margin-right:3px;
@@ -767,7 +767,7 @@ ul.product li dl dd.price {
 }
 
 #shopping {
-	
+
 }
 
 #shopping table {
@@ -861,7 +861,7 @@ ul.product li dl dd.price {
 }
 
 #chat-room {
-	
+
 }
 
 #chat-room .lefter {

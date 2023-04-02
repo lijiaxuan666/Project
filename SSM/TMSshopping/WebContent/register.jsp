@@ -134,14 +134,6 @@
                         <td><input type="text" class="text" name="address" value="" placeholder="请填写正确的送货地址"/></td>
                     </tr>
                     <tr>
-                        <td class="field">验证码：</td>
-                        <td><input class="text verycode" type="text" name="veryCode"
-                                   onfocus="FocusItem(this)" onblur="Checknum(this);" placeholder="如看不清，请点击图片"/><img
-                                id="veryCode" alt="看不清,换一张" style="cursor: hand;"
-                                src="usernum?<%=new Date().getTime()%>" onclick="change(this)"/><span
-                                id="msg"></span></td>
-                    </tr>
-                    <tr>
                         <td></td>
                         <td><label class="ui-green"><input type="submit"
                                                            name="submit" disabled=true id="sub" value="提交注册"/></label>

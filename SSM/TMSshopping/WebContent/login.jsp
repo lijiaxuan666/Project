@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.net.URLDecoder"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,6 +11,7 @@
     <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
     <script type="text/javascript" src="scripts/function.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
@@ -17,11 +19,13 @@
     <script type="text/javascript">
         function selectname() {
             var name = document.getElementById("selectname").value;
+            console.log(name);
             location.href = 'selectProductList?name=' + name;
         }
 
         function searchHot(name) {
             location.href = 'selectProductList?name=' + name;
+
         }
     </script>
 
@@ -72,8 +76,8 @@
             <li><a href="javascript:searchHot('肉脯')">肉脯</a></li>
             <li><a href="javascript:searchHot('牛奶')">牛奶</a></li>
             <li><a href="javascript:searchHot('特产')">特产</a></li>
-            <li class="last"><input type="text" id="selectname"/><a
-                    href="javascript:selectname()">搜索</a></li>
+            <li class="last"><input type="text" id="selectname"
+                                    value="${search_words}"/><a href="javascript:selectname()">搜索</a></li>
         </ul>
     </div>
 </div>
@@ -95,14 +99,6 @@
                         <td><input class="text" type="password" id="passWord"
                                    name="passWord" onfocus="FocusItem(this)"
                                    onblur="CheckItem(this);"/><span></span></td>
-                    </tr>
-                    <tr>
-                        <td class="field">验证码：</td>
-                        <td><input class="text verycode" type="text" name="veryCode"
-                                   onfocus="FocusItem(this)" onblur="Checknum(this);"/><img
-                                id="veryCode" alt="看不清,换一张" style="cursor: hand;"
-                                src="usernum?<%=new Date().getTime()%>" onclick="change(this)"/><span
-                                id="msg"></span></td>
                     </tr>
                     <tr>
                         <td></td>

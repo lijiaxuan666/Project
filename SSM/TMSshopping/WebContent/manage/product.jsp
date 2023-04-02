@@ -58,8 +58,8 @@
                                 class="mdi mdi-format-align-justify"></i>
                             <span>商品信息</span></a>
                             <ul class="nav nav-subnav">
-                                <li><a class="multitabs" href="productClassAdd">新增</a></li>
-                                <li><a class="multitabs" href="productSelect">分类管理</a></li>
+                                <li><a class="multitabs" href="product-add.jsp">新增</a></li>
+                                <li><a class="multitabs" href="productSelect">商品管理</a></li>
                             </ul>
                         </li>
                         <li class="nav-item nav-item-has-subnav"><a href="javascript:void(0)"><i

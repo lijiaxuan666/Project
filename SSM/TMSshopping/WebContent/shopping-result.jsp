@@ -49,37 +49,13 @@
     </a>
 
 </div>
-<div id="childNav">
-    <div class="wrap">
-        <ul class="clearfix">
-            <li><a>热门搜索</a></li>
-            <li class="first"><a href="javascript:searchHot('瓜子')">瓜子</a></li>
-            <li><a href="javascript:searchHot('辣条')">辣条</a></li>
-            <li><a href="javascript:searchHot('凤爪')">凤爪</a></li>
-            <li><a href="javascript:searchHot('泡面')">泡面</a></li>
-            <li><a href="javascript:searchHot('巧克力')">巧克力</a></li>
-            <li><a href="javascript:searchHot('葡萄干')">葡萄干</a></li>
-            <li><a href="javascript:searchHot('薯片')">薯片</a></li>
-            <li><a href="javascript:searchHot('糖果')">糖果</a></li>
-            <li><a href="javascript:searchHot('肉脯')">肉脯</a></li>
-            <li><a href="javascript:searchHot('牛奶')">牛奶</a></li>
-            <li><a href="javascript:searchHot('特产')">特产</a></li>
-            <li class="last"><input type="text" id="selectname"/><a
-                    href="javascript:selectname()">搜索</a></li>
-        </ul>
-    </div>
-</div>
-<div id="position" class="wrap">
-    您现在的位置：<a href="index.jsp">商城</a> &gt; 购物车
-</div>
 <div class="wrap">
     <div id="shopping">
         <div class="shadow">
             <em class="corner lb"></em> <em class="corner rt"></em>
             <div class="box">
                 <div class="msg">
-                    <p>恭喜：购买成功！</p>
-                    <p>正在进入首页...</p>
+                    <p>购买成功！正在返回首页...</p>
                     <script type="text/javascript">
                         setTimeout("location.href='indexSelect'", 1000);
                     </script>

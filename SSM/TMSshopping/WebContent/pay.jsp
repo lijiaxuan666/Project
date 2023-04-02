@@ -208,7 +208,7 @@ String WIDout_trade_no = session.getAttribute("WIDout_trade_no");
         <h2 id="tab4" name="tab">退 款 查 询</h2>
         <h2 id="tab5" name="tab">交 易 关 闭</h2>
     </div>
-    <form name=alipayment action=alipay.trade.page.pay.jsp method=post>
+    <form name=alipayment action=shopping-result.jsp method=post>
         <div id="body1" class="show" name="divcontent">
             <dl class="content">
                 <dt>商户订单号 ：</dt>
@@ -229,7 +229,7 @@ String WIDout_trade_no = session.getAttribute("WIDout_trade_no");
                 <hr class="one_line">
                 <dt>商品描述：</dt>
                 <dd>
-                    <input id="WIDbody_sids" name="WIDbody" value="<%=session.getAttribute("WIDbody")%>"/>
+                    <input id="WIDbody_sids" name="WIDbody"  placeholder="该商品暂无描述..."/>
                 </dd>
                 <hr class="one_line">
                 <dt></dt>

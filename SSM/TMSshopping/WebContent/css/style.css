@@ -226,7 +226,7 @@ a:hover, a:active {
 #childNav1 {
 	clear: both;
 	height: 30px;
-	background: rgba(11, 7, 2, 0.78);
+	background: rgba(106, 106, 106, 0.6);
 	overflow: hidden;
 }
 
@@ -238,8 +238,8 @@ a:hover, a:active {
 #childNav ul li {
 	float: left;
 	display: inline;
-	border-right: 1px solid #070707;
-	border-left: 1px solid #0e0a07;
+	border-right: 1px solid rgba(206, 206, 206, 0.44);
+	border-left: 1px solid rgba(206, 206, 206, 0.44);
 	padding: 0 9px;
 }
 

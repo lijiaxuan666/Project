@@ -52,8 +52,8 @@
                                 class="mdi mdi-format-align-justify"></i>
                             <span>商品信息</span></a>
                             <ul class="nav nav-subnav">
-                                <li><a class="multitabs" href="productClassAdd">新增</a></li>
-                                <li><a class="multitabs" href="productSelect">分类管理</a></li>
+                                <li><a class="multitabs" href="product-add.jsp">新增</a></li>
+                                <li><a class="multitabs" href="productSelect">商品管理</a></li>
                             </ul>
                         </li>
                         <li class="nav-item nav-item-has-subnav"><a href="javascript:void(0)"><i
@@ -90,14 +90,31 @@
                 <tr>
                     <td class="field">所属分类：</td>
                     <td><select name="parentId">
-                        <c:forEach var="f" items="${flist}">
-                            <option value="${f.EPC_ID }" disabled="disabled">${f.EPC_NAME }</option>
-                            <c:forEach var="c" items="${clist}">
-                                <c:if test="${f.EPC_ID==c.EPC_PARENT_ID}">
-                                    <option value="${f.EPC_ID }-${c.EPC_ID }">&nbsp;&nbsp;${c.EPC_NAME }</option>
-                                </c:if>
-                            </c:forEach>
-                        </c:forEach>
+                        <option value="27-0" >瓜子</option>
+                        <option value="28-27">洽洽</option>
+                        <option value="31-0">辣条</option>
+                        <option value="32-31">卫龙</option>
+                        <option value="33-31">口水娃</option>
+                        <option value="35-0">凤爪</option>
+                        <option value="39-0">泡面</option>
+                        <option value="40-39">康师傅</option>
+                        <option value="41-39">统一</option>
+                        <option value="42-39">今麦郎</option>
+                        <option value="43-0">巧克力</option>
+                        <option value="44-43">德芙</option>
+                        <option value="45-43">徐福记</option>
+                        <option value="47-0">葡萄干</option>
+                        <option value="51-0">薯片</option>
+                        <option value="52-51">乐事</option>
+                        <option value="53-51">上好佳</option>
+                        <option value="54-51">可比克</option>
+                        <option value="55-0">糖果</option>
+                        <option value="56-55">阿尔卑斯</option>
+                        <option value="57-55">绿箭</option>
+                        <option value="58-55">大白兔</option>
+                        <option value="59-0">肉脯</option>
+                        <option value="63-0">牛奶</option>
+                        <option value="67-0">特产</option>
                     </select></td>
                 </tr>
                 <tr>

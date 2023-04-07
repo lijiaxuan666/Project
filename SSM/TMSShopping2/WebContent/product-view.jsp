@@ -5,6 +5,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>商城-首页</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/xiaoxitixing.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/xiaoxitixing.js"></script>
+    <script src="js/Y_daohang.js"></script>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css"/>
@@ -241,30 +248,16 @@
     </script>
 </head>
 <body style="background-color: wheat">
-<div id="header">
-    <div class="wrap">
-        <div class="help">
-            <c:if test="${name!=null}">
-                <a href="selectdd?dd=${name.EU_USER_ID }">个人订单</a>
-            </c:if>
-            <c:if test="${name!=null}">用户: ${name.EU_USER_ID }</c:if>
-            <a href="ShopSelect"><img style="margin-bottom: 5px" src="./images/购物车.png"/>购物车</a>
-            <c:if test="${name==null}">
-                <a href="login.jsp">
-                    <span class="glyphicon glyphicon-user">登录</span>
-                </a>
-                |<a href="register.jsp">注册</a>
-            </c:if>
-            <c:if test="${name!=null}">
-                <a href="zx">退出</a>
-            </c:if>
-            <c:if test="${name.EU_STATUS==2}">
-                <a href="manage/index.jsp">去后台</a>
-            </c:if>
-        </div>
-        <a href="indexSelect">
-            <span>首页</span>
-        </a>
+<div class="daohang">
+    <div>
+        <ul>
+            <li ><a href="indexSelect">首页</a></li>
+            <li ><a href="login.jsp">登录</a></li>
+            <li ><a href="selectdd?dd=${name.EU_USER_ID }">个人订单</a></li>
+            <li ><a href="ShopSelect">购物车</a></li>
+            <li ><c:if test="${name.EU_STATUS==2}">
+                <a href="manage/index.jsp">去后台</a></c:if></li>
+        </ul>
     </div>
 </div>
 <div id="childNav" class="wrap">

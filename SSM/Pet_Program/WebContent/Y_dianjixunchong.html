@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物计划</title>
+    <link rel="stylesheet" href="css/dianjixunchong.css">
+</head>
+<body>
+    <div class="tupian">
+        <img src="images/img18.jpg" alt="">
+    </div>
+    <div class="biaoti">请填写寻宠信息</div>
+    <div class="conten">
+        <table>
+            <tr>
+                <td>
+                    <img src="images/img7.1.png" alt="">
+                    <span class="banlan">板蓝根</span>
+                </td>
+                <td>
+                    <form onclick="return false">
+                        <div>
+                            <span>姓名：</span>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <span>性别：</span>
+                            <select id="chongwu">
+                                <option >男</option>
+                                <option >女</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span>出生年月：</span>
+                            <input type="date" id="start" name="trip-start" value="2018-07-22" min="1960-01-01" max="2023-12-31">
+                        </div>
+                        <div>
+                            <span>联系方式：</span>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <span>留言：</span>
+                            <input type="text">
+                        </div>
+
+                            <button class="dab" onclick="update()">提交</button>
+                            <button class="dab" onclick="window.location.href='Y_shouye.html'">返回</button>
+
+                    </form>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">@宠物计划 联系热线11011001</div>
+<script>
+    function update() {
+        window.location.href = 'updateTieZi?status2=已找到'+'&user='+localStorage.getItem("user")+'&id='+localStorage.getItem("id");
+    }
+</script>
+</body>
+</html>
